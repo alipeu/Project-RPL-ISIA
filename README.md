@@ -6,7 +6,7 @@ Project Mata Kuliah KOM331 Rekayasa Perangkat Lunak -- IPB Scholarship Informati
 
 Kalo belum ada folder di laptop kalian, clone dulu
 ```
-git clone https://github.com/alifnl11/Project-R5.git
+git clone https://github.com/alipeu/Project-RPL-ISIA
 ```
 
 Kalo udah ada masuk ke folder project di git bash, terus pull (biar sinkron yang di laptop kalian sama yang di sini) **!!Penting!!**
