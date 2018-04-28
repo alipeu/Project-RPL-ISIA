@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
-import { HomeFixPage } from '../home-fix/home-fix';
 import { LoginMhsPage } from '../login-mhs/login-mhs';
 import { LoginSchPage } from '../login-sch/login-sch';
 
