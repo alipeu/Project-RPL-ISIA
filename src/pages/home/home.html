@@ -1,5 +1,12 @@
-<ion-content padding>
-  <h1>LOGIN</h1>
-<button (click)="onLoadLoginMhs()">LoginMhs</button>
-<button (click)="onLoadLoginSch()">LoginSch</button>
+<ion-content text-center class="vertical-align-content bg-style"  >
+<ion-grid>
+    <ion-row>
+          <ion-col>
+              <h1 style="font-size:1.5cm">Sign In<br>As</h1><br><br>
+              <img src="../assets/imgs/mhs.png"(click)="onLoadLoginMhs()" class="logo" alt="Logo" />
+              <span class="or">Or</span>
+              <img src="../assets/imgs/sch.png"(click)="onLoadLoginSch()" class="logo" alt="Logo" />
+          </ion-col>
+    </ion-row>
+</ion-grid>
 </ion-content>

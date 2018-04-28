@@ -1,7 +1,23 @@
 page-home {
-
-}
-
-ionic-title {
-    text-align: center;
+    .bg-style {
+        background: #64b5f6;
+    }
+    .vertical-align-content > * {
+        display: flex!important;
+        align-content: center!important;
+        align-items: center!important;
+    }
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+    .or {
+        font-size: 30px;
+        position: relative;
+        bottom: 35px;
+        margin-left: 20px;
+        margin-right: 25px;
+        
+    }
+    font-family: "Poetsen One" !important;
 }
