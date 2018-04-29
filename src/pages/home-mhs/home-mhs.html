@@ -1,20 +1,105 @@
 <ion-header>
+  <div class="bar bar-header">
     <ion-navbar hideBackButton>
       <ion-buttons left>
-        <button ion-button>
-          <ion-icon name="ios-contact" class="header-icon"></ion-icon>
+        <button ion-button (click)="onLoadProfile()">
+          <ion-icon name="contact" class="header-icon"></ion-icon>
         </button>
       </ion-buttons>
-      <ion-title>IPB Scholarship Information</ion-title>
+      <ion-title>ISIA</ion-title>
       <ion-buttons right>
         <button ion-button>
           <ion-icon name="ios-search" class="header-icon"></ion-icon>
         </button>
       </ion-buttons>
     </ion-navbar>
+  </div>
+  <div class="bar bar-subheader bg-style">
+    <ion-searchbar 
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+
+  </div>
   </ion-header>
-  
+
   <ion-content padding>
-    <h3>Beasiswa</h3>
-  <button (click)="onLoadProfile()">Profile</button>
-  </ion-content>
+    <ion-card>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../assets/imgs/profile.png">
+          </ion-avatar>
+          <h2>Tanoto Foundation</h2>
+          <p>April 29, 2018</p>
+        </ion-item>
+      
+        <img src="../assets/imgs/juara.jpg">
+      
+        <ion-card-content>
+          <p><b>Beasiswa Tanoto</b><br>
+          Merupakan beasiswa yang didirikan oleh tanoto foundation, pendaftaran dibuka pada tanggal 29 april 2018.
+          </p>
+        </ion-card-content>
+      
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>999 Likes</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>199 Comments</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+              <button ion-button icon-left clear small>
+                  <div>Detail</div>
+                </button>
+          </ion-col>
+        </ion-row>
+      
+      </ion-card>
+      <ion-card>
+  
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="../assets/imgs/mhs.png">
+            </ion-avatar>
+            <h2>Alip Mencari Bakat</h2>
+            <p>September 11, 2017</p>
+          </ion-item>
+        
+          <img src="../assets/imgs/juara1.jpg">
+        
+          <ion-card-content>
+            <p><b>Alip Mencari Bakat</b><br>
+            Merupakan beasiswa yang didirikan oleh alip poundation, pendaftaran dibuka pada tanggal 29 april 2018.
+            </p>
+          </ion-card-content>
+        
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>1999 Likes</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="text"></ion-icon>
+                <div>100 Comments</div>
+              </button>
+            </ion-col>
+            <ion-col center text-center>
+                <button ion-button icon-left clear small>
+                    <div>Detail</div>
+                  </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+    </ion-content>

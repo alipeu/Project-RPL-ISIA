@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ProfilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, AlertController, NavController, NavParams } from 'ionic-angular';
+import { HomeMhsPage } from '../home-mhs/home-mhs';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
   }
-
+  onLoadHomeMhs(){
+  this.navCtrl.push(HomeMhsPage);
+  }
+  showAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Successfull!',
+      subTitle: 'Edit profile success.',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 }
+
