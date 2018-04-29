@@ -1,3 +1,20 @@
 page-profile {
-    background-color: blue;
+    .toolbar-background {
+        background-color: #64b5f6;
+    }
+    
+    ion-title {
+        text-align: center;
+        color : color($colors, light) !important;
+        font-family: "Poetsen One";
+    }
+    
+    .header-icon {
+        font-size: 40px;
+    }
+    
+    .toolbar-title.toolbar-title-md, 
+    .toolbar-title.toolbar-title-ios, 
+    .toolbar-title.toolbar-title-wp { color: map-get($colors, light); font-size: 7vw; }
+
 }

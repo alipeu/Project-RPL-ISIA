@@ -17,5 +17,8 @@ page-login-mhs {
         margin-top: 100px;
         }
 
+    ion-title {
+        color: color($colors, light) !important;
+    }
 
 }
