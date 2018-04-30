@@ -21,5 +21,4 @@ export class HomeSchPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomeSchPage');
   }
-
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 
 @IonicPage()
@@ -9,13 +9,18 @@ import { ProfilePage } from '../profile/profile';
 })
 export class HomeMhsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public menuCtrl: MenuController
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomeMhsPage');
   }
   onLoadProfile(){  
-    this.navCtrl.push(ProfilePage);
+    this.menuCtrl.enable(true);
+    this.menuCtrl.open();
   }
 }

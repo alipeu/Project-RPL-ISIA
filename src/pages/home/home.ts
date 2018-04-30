@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { LoginMhsPage } from '../login-mhs/login-mhs';
 import { LoginSchPage } from '../login-sch/login-sch';
 
@@ -8,8 +8,11 @@ import { LoginSchPage } from '../login-sch/login-sch';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  constructor(public navCtrl: NavController) {
-
+  constructor(
+    public navCtrl: NavController,
+    public menuCtrl: MenuController
+  ) {
+    this.menuCtrl.enable(false);
   }
   onLoadLoginMhs(){
     this.navCtrl.push(LoginMhsPage);
