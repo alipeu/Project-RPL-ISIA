@@ -3,12 +3,35 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Notification</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
+    <ion-list>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../assets/imgs/mhs1.png">
+          </ion-avatar>
+          <h2>Bobby Jonathan</h2>
+          <p>Selamat Anda Lolos Seleksi Tahap Pertama!</p>
+        </ion-item>
+        <ion-item>
+            <ion-avatar item-start>
+              <img src="../assets/imgs/mhs1.png">
+            </ion-avatar>
+            <h2>Alif Hilmi Akbar</h2>
+            <p>Sini Mending Push Rank Aja!</p>
+          </ion-item>
+          <ion-item>
+              <ion-avatar item-start>
+                <img src="../assets/imgs/mhs2.png">
+              </ion-avatar>
+              <h2>Leni Angraeni</h2>
+              <p>Ini Semuanya Gue Yang Ngerjain Hehe</p>
+            </ion-item>
+      </ion-list>
+  <!-- <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon [name]="item.icon" item-start></ion-icon>
       {{item.title}}
@@ -19,5 +42,5 @@
   </ion-list>
   <div *ngIf="selectedItem" padding>
     You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+  </div> -->
 </ion-content>

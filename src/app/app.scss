@@ -21,3 +21,7 @@
           url('../assets/fonts/poetsen/po.woff2') format('woff2'),
           url('../assets/fonts/poetsen/po.woff') format('woff');
 }
+
+ .toolbar-background {
+     background: $app-background1;
+ }

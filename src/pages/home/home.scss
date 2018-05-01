@@ -1,6 +1,6 @@
 page-home {
     .bg-style {
-        background-color: #64b5f6;
+        background: $app-background;
     }
     .vertical-align-content > * {
         display: flex!important;
@@ -12,7 +12,7 @@ page-home {
     }
     .or {
         font-size: 30px;
-        color: #ffffff;
+        color: #000;
         position: relative;
         bottom: 40px;
         margin-left: 20px;

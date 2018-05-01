@@ -5,9 +5,17 @@ page-login-mhs {
     }
 
     .bg-style {
-        background: #64b5f6;
+        background: $app-background;
         padding: 10px;
         position: fixed;
+    }
+
+    ion-header {
+        color: #64b5f6 !important;
+    }
+
+    ion-navbar {
+        color: #64b5f6 !important;
     }
 
     .vertical-align-content > * {
