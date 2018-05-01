@@ -9,7 +9,6 @@ page-home {
     }
     .logo {
         width: 100px;
-        height: 100px;
     }
     .or {
         font-size: 30px;
@@ -17,8 +16,17 @@ page-home {
         position: relative;
         bottom: 40px;
         margin-left: 20px;
-        margin-right: 25px;
-        
+        margin-right: 23px;
+    }
+    .cmhs {
+        color: #000;
+        position: relative;
+        right: 30px;
+    }
+    .csch {
+        color: #000;
+        position: relative;
+        left: 53px;
     }
     font-family: "Poetsen One" !important;
 }
