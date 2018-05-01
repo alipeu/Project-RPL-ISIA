@@ -17,6 +17,10 @@ page-home-mhs {
         background: #64b5f6;
     }
 
+    .bg-style1 {
+        background: white;
+    }
+
     .toolbar-title.toolbar-title-md, 
     .toolbar-title.toolbar-title-ios, 
     .toolbar-title.toolbar-title-wp { color: map-get($colors, light); font-size: 10; }

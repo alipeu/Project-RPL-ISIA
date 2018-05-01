@@ -14,18 +14,17 @@
       </ion-buttons>
     </ion-navbar>
   </div>
-  <div class="bar bar-subheader bg-style">
-    <ion-searchbar 
-  [(ngModel)]="myInput"
-  [showCancelButton]="shouldShowCancel"
-  (ionInput)="onInput($event)"
-  (ionCancel)="onCancel($event)">
-</ion-searchbar>
-
-  </div>
   </ion-header>
 
-  <ion-content padding>
+  <ion-content padding class="bg-style1">
+
+      <ion-searchbar 
+      [(ngModel)]="myInput"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+    
     <ion-card>
         <ion-item>
           <ion-avatar item-start>
