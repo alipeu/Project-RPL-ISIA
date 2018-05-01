@@ -20,6 +20,5 @@ export class HomePage {
   onLoadLoginSch(){
     this.navCtrl.push(LoginSchPage);
   }
-  
 }
 
