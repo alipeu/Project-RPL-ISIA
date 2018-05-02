@@ -18,12 +18,12 @@
 
   <ion-content padding class="bg-style1">
 
-      <!-- <ion-searchbar 
+    <ion-searchbar 
       [(ngModel)]="myInput"
       [showCancelButton]="shouldShowCancel"
-      (ionInput)="onInput($event)"
+      (ionInput)="getItems($event)"
       (ionCancel)="onCancel($event)">
-    </ion-searchbar> -->
+    </ion-searchbar>
     
     <ion-card>
         <ion-item>
@@ -43,18 +43,6 @@
         </ion-card-content>
       
         <ion-row>
-          <ion-col>
-            <button ion-button icon-left clear small>
-              <ion-icon name="thumbs-up"></ion-icon>
-              <div>999 Likes</div>
-            </button>
-          </ion-col>
-          <ion-col>
-            <button ion-button icon-left clear small>
-              <ion-icon name="text"></ion-icon>
-              <div>199 Comments</div>
-            </button>
-          </ion-col>
           <ion-col center text-center>
               <button ion-button icon-left clear small>
                   <div>Detail</div>
@@ -82,18 +70,6 @@
           </ion-card-content>
         
           <ion-row>
-            <ion-col>
-              <button ion-button icon-left clear small>
-                <ion-icon name="thumbs-up"></ion-icon>
-                <div>1999 Likes</div>
-              </button>
-            </ion-col>
-            <ion-col>
-              <button ion-button icon-left clear small>
-                <ion-icon name="text"></ion-icon>
-                <div>100 Comments</div>
-              </button>
-            </ion-col>
             <ion-col center text-center>
                 <button ion-button icon-left clear small>
                     <div>Detail</div>
