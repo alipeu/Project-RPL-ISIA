@@ -14,6 +14,7 @@ import { LoginSchPage } from '../pages/login-sch/login-sch';
 import { DetailPage } from '../pages/detail/detail';
 import { HomeMhsPage } from '../pages/home-mhs/home-mhs';
 import { HomeSchPage } from '../pages/home-sch/home-sch';
+import { HelpPage } from '../pages/help/help';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomeSchPage } from '../pages/home-sch/home-sch';
     LoginSchPage,
     DetailPage,
     HomeMhsPage,
-    HomeSchPage
+    HomeSchPage,
+    HelpPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { HomeSchPage } from '../pages/home-sch/home-sch';
     LoginSchPage,
     DetailPage,
     HomeMhsPage,
-    HomeSchPage
+    HomeSchPage,
+    HelpPage
   ],
   providers: [
     StatusBar,
