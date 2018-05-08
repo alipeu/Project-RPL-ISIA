@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2018 at 04:42 PM
+-- Generation Time: May 08, 2018 at 06:54 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -39,7 +39,8 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim_mhs`, `nama_mhs`, `pass_mhs`) VALUES
-('G64160055', 'Ali peu', 'peupeupeu');
+('G64160055', 'Ali peu', 'peupeupeu'),
+('G64160090', 'apacoba?', 'wkwkwk');
 
 -- --------------------------------------------------------
 
@@ -49,10 +50,17 @@ INSERT INTO `mahasiswa` (`nim_mhs`, `nama_mhs`, `pass_mhs`) VALUES
 
 CREATE TABLE `post` (
   `judul_post` varchar(20) NOT NULL,
-  `waktu_post` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `waktu_post` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `id_post` int(5) NOT NULL,
   `isi_post` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`judul_post`, `waktu_post`, `id_post`, `isi_post`) VALUES
+('Pendaftaran Berkas B', '2018-05-08 23:51:41', 1, 'Info lebih lanjut hubungi siapa coba?');
 
 -- --------------------------------------------------------
 
@@ -65,6 +73,13 @@ CREATE TABLE `provider` (
   `nama_penyalur` varchar(40) NOT NULL,
   `pass_penyalur` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `provider`
+--
+
+INSERT INTO `provider` (`username_penyalur`, `nama_penyalur`, `pass_penyalur`) VALUES
+('tanoto_f0', 'Tanoto Foundation', 'forestry10');
 
 --
 -- Indexes for dumped tables
@@ -96,7 +111,7 @@ ALTER TABLE `provider`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id_post` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_post` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
