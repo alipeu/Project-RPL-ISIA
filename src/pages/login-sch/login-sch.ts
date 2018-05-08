@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { HomeSchPage } from '../home-sch/home-sch';
 
 /**
@@ -16,15 +16,30 @@ import { HomeSchPage } from '../home-sch/home-sch';
 })
 export class LoginSchPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginSchPage');
   }
 
-  onLoadHomeSch(){
-    this.navCtrl.push(HomeSchPage);
+  presentLoadingHomeSch() {
+    let loading = this.loadingCtrl.create({
+      content: 'Please Wait...'
+    });
+  
+    loading.present();
+  
+    setTimeout(() => {
+      this.navCtrl.push(HomeSchPage);
+    }, 1500);
+  
+    setTimeout(() => {
+      loading.dismiss();
+    }, 1500);
   }
 
 }

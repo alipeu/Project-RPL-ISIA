@@ -15,6 +15,8 @@ import { DetailPage } from '../pages/detail/detail';
 import { HomeMhsPage } from '../pages/home-mhs/home-mhs';
 import { HomeSchPage } from '../pages/home-sch/home-sch';
 import { HelpPage } from '../pages/help/help';
+import { PostPage } from '../pages/post/post';
+import { EditPostPage } from '../pages/edit-post/edit-post';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HelpPage } from '../pages/help/help';
     DetailPage,
     HomeMhsPage,
     HomeSchPage,
-    HelpPage
+    HelpPage,
+    PostPage,
+    EditPostPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,9 @@ import { HelpPage } from '../pages/help/help';
     DetailPage,
     HomeMhsPage,
     HomeSchPage,
-    HelpPage
+    HelpPage,
+    PostPage,
+    EditPostPage
   ],
   providers: [
     StatusBar,
