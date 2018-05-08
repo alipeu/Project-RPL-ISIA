@@ -2,7 +2,7 @@
   <div class="bar bar-header">
     <ion-navbar hideBackButton>
       <ion-buttons left>
-        <button ion-button (click)="onLoadProfile()">
+        <button ion-button (click)="openMenu()">
           <ion-icon name="menu" class="header-icon"></ion-icon>
         </button>
       </ion-buttons>
@@ -14,67 +14,59 @@
       </ion-buttons>
     </ion-navbar>
   </div>
-  </ion-header>
+</ion-header>
 
-  <ion-content padding class="bg-style1">
-
-    <ion-searchbar 
-      [(ngModel)]="myInput"
-      [showCancelButton]="shouldShowCancel"
-      (ionInput)="getItems($event)"
-      (ionCancel)="onCancel($event)">
-    </ion-searchbar>
+<ion-content padding class="bg-style">
+  <ion-searchbar 
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="getItems($event)"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar>
     
-    <ion-card>
-        <ion-item>
-          <ion-avatar item-start>
-            <img src="../assets/imgs/profile.png">
-          </ion-avatar>
-          <h2>Tanoto Foundation</h2>
-          <p>April 29, 2018</p>
-        </ion-item>
-      
-        <img src="../assets/imgs/juara.jpg">
-      
-        <ion-card-content>
-          <p><b>Beasiswa Tanoto</b><br>
-          Merupakan beasiswa yang didirikan oleh tanoto foundation, pendaftaran dibuka pada tanggal 29 april 2018.
-          </p>
-        </ion-card-content>
-      
-        <ion-row>
-          <ion-col center text-center>
-              <button ion-button icon-left clear small>
-                  <div>Detail</div>
-                </button>
-          </ion-col>
-        </ion-row>
-      
-      </ion-card>
-      <ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../assets/imgs/profile.png">
+      </ion-avatar>
+      <h2>Tanoto Foundation</h2>
+      <p>April 29, 2018</p>
+    </ion-item>    
+    <img src="../assets/imgs/juara.jpg">
+    <ion-card-content>
+      <p><b>Beasiswa Tanoto</b><br>
+      Merupakan beasiswa yang didirikan oleh tanoto foundation, pendaftaran dibuka pada tanggal 29 april 2018.
+      </p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col center text-center>
+        <button ion-button icon-left clear small>
+          <div>Detail</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
   
-          <ion-item>
-            <ion-avatar item-start>
-              <img src="../assets/imgs/mhs.png">
-            </ion-avatar>
-            <h2>Alip Mencari Bakat</h2>
-            <p>September 11, 2017</p>
-          </ion-item>
-        
-          <img src="../assets/imgs/juara1.jpg">
-        
-          <ion-card-content>
-            <p><b>Alip Mencari Bakat</b><br>
-            Merupakan beasiswa yang didirikan oleh alip poundation, pendaftaran dibuka pada tanggal 29 april 2018.
-            </p>
-          </ion-card-content>
-        
-          <ion-row>
-            <ion-col center text-center>
-                <button ion-button icon-left clear small>
-                    <div>Detail</div>
-                  </button>
-            </ion-col>
-          </ion-row>
-        </ion-card>
-    </ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../assets/imgs/mhs.png">
+      </ion-avatar>
+      <h2>Alip Mencari Bakat</h2>
+      <p>September 11, 2017</p>
+    </ion-item>
+    <img src="../assets/imgs/juara1.jpg">
+    <ion-card-content>
+      <p><b>Alip Mencari Bakat</b><br>
+      Merupakan beasiswa yang didirikan oleh alip poundation, pendaftaran dibuka pada tanggal 29 april 2018.
+      </p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col center text-center>
+        <button ion-button icon-left clear small>
+          <div>Detail</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

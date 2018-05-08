@@ -1,4 +1,9 @@
 page-home-sch {
+    .del {
+        float: right;
+        font-size: 25px;
+    }
+
     .toolbar-background {
         background-color: #64b5f6;
     }
@@ -19,5 +24,5 @@ page-home-sch {
 
     .toolbar-title.toolbar-title-md, 
     .toolbar-title.toolbar-title-ios, 
-    .toolbar-title.toolbar-title-wp { color: map-get($colors, light); font-size: 10vw; }
+    .toolbar-title.toolbar-title-wp { color: map-get($colors, light); font-size: 10; }
 }

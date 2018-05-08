@@ -1,9 +1,4 @@
 page-login-mhs {
-
-    ion-content {
-        font-family: "Poetsen One";
-    }
-
     .bg-style {
         background: $app-background;
         padding: 10px;
@@ -28,5 +23,6 @@ page-login-mhs {
     ion-title {
         color: color($colors, light) !important;
     }
-
+    
+    font-family: "Poetsen One" !important;
 }

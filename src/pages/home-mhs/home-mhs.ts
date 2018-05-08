@@ -31,7 +31,7 @@ export class HomeMhsPage {
     console.log('ionViewDidLoad HomeMhsPage');
   }
 
-  onLoadProfile(){  
+  openMenu(){  
     this.menuCtrl.enable(true);
     this.menuCtrl.open();
   }

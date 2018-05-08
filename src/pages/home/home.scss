@@ -1,15 +1,27 @@
 page-home {
+    ion-grid {
+        margin-bottom: 50px;
+    }
+
+    h1 {
+        font-size: 1cm;
+        color: black;
+    }
+
     .bg-style {
         background: $app-background;
     }
+
     .vertical-align-content > * {
         display: flex!important;
         align-content: center!important;
         align-items: center!important;
     }
+
     .logo {
         width: 100px;
     }
+
     .or {
         font-size: 30px;
         color: #000;
@@ -18,15 +30,18 @@ page-home {
         margin-left: 20px;
         margin-right: 23px;
     }
+
     .cmhs {
         color: #000;
         position: relative;
         right: 30px;
     }
+
     .csch {
         color: #000;
         position: relative;
         left: 53px;
     }
+
     font-family: "Poetsen One" !important;
 }
