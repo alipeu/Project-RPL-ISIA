@@ -8,6 +8,9 @@ import { ProfilePage } from '../profile/profile';
   templateUrl: 'home-mhs.html',
 })
 export class HomeMhsPage {
+ 
+  searchQuery: string = '';
+  items: string[];
 
   constructor(
     public navCtrl: NavController, 
@@ -16,11 +19,39 @@ export class HomeMhsPage {
   ) {
   }
 
+  initializeItems() {
+    this.items = [
+      'Tanoto',
+      'PPA'
+    ];
+  }
+
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomeMhsPage');
   }
+
   onLoadProfile(){  
     this.menuCtrl.enable(true);
     this.menuCtrl.open();
   }
+  
+  onCancel() {
+    this.navCtrl.push(ProfilePage);
+  }
+
+  getItems(ev: any) {
+    this.initializeItems();
+
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
+
 }
