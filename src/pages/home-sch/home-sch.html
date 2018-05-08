@@ -5,7 +5,7 @@
 </ion-header>
 <ion-content padding>
   <ion-fab right bottom>
-    <button ion-fab color="primary"><ion-icon name="md-add"></ion-icon></button>
+    <button ion-fab color="primary" (click)="onLoadPost()"><ion-icon name="md-add"></ion-icon></button>
   </ion-fab>
   <ion-card>
 
@@ -28,20 +28,9 @@
     <ion-row>
       <ion-col>
         <button ion-button icon-left clear small>
-          <ion-icon name="thumbs-up"></ion-icon>
-          <div>12 Likes</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-left clear small>
           <ion-icon name="text"></ion-icon>
           <div>4 Comments</div>
         </button>
-      </ion-col>
-      <ion-col center text-center>
-        <ion-note>
-          11h ago
-        </ion-note>
       </ion-col>
     </ion-row>
   
