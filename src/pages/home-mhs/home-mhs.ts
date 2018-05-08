@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
+import { DetailPage } from '../detail/detail';
 
 @IonicPage()
 @Component({
@@ -38,6 +39,9 @@ export class HomeMhsPage {
   
   onCancel() {
     this.navCtrl.push(ProfilePage);
+  }
+  onLoadDetail() {
+    this.navCtrl.push(DetailPage);
   }
 
   getItems(ev: any) {

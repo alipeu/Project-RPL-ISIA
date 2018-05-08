@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, AlertController, NavController, NavParams } from 'ionic-angular';
 import { PostPage } from '../post/post';
-
-/**
- * Generated class for the HomeSchPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { EditPostPage } from '../edit-post/edit-post';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -18,9 +13,25 @@ export class HomeSchPage {
 
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    public alertCtrl: AlertController) {
   }
   onLoadPost(){
     this.navCtrl.push(PostPage);
+  }
+  onLoadEditPost(){
+    this.navCtrl.push(EditPostPage);
+  }
+  showAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Hapus',
+      subTitle: 'Apakah Anda yakin menghapus post ini?',
+      buttons: ['YA', 'TIDAK']
+    });
+    alert.present();
+  }
+
+  onLoadHome(){
+    this.navCtrl.push(HomePage);
   }
 }

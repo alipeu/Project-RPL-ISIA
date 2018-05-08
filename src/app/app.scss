@@ -22,6 +22,20 @@
           url('../assets/fonts/poetsen/po.woff') format('woff');
 }
 
+ion-navbar ion-icon {
+    color: #fff;
+}
+
  .toolbar-background {
      background: $app-background1;
  }
+
+ ion-title {
+    text-align: left;
+    color : color($colors, light) !important;
+    font-family: "Poetsen One";
+}
+
+.toolbar-title.toolbar-title-md, 
+.toolbar-title.toolbar-title-ios, 
+.toolbar-title.toolbar-title-wp { color: map-get($colors, light); font-size: 10; }

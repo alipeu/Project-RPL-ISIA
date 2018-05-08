@@ -1,5 +1,6 @@
 <ion-header>
-  <ion-navbar hideBackButton>
+  <ion-navbar>
+      <ion-icon name="md-exit" style="float: right; font-size:25px; margin-right:10px"(click)="onLoadHome()"></ion-icon>
     <ion-title>Your Posts</ion-title>
   </ion-navbar>
 </ion-header>
@@ -13,22 +14,19 @@
       <ion-avatar item-start>
         <img src="../assets/imgs/profile.png">
       </ion-avatar>
-      <ion-icon name="ios-trash-outline" style="float: right; font-size:25px"></ion-icon>
-      <h2>Marty McFly</h2>
-      <p>November 5, 1955</p>
-    </ion-item>
-  
-    <img src="../assets/imgs/juara1.jpg">
-  
-    <ion-card-content>
-      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
-    </ion-card-content>
-  
-    <ion-row>
-      <ion-col>
-        <button ion-button full round>Edit</button>
-      </ion-col>
-    </ion-row>
-  
+      <ion-icon name="md-trash" style="float: right; font-size:25px; margin-left:10px"(click)="showAlert()"></ion-icon>
+      <ion-icon name="md-create" style="float: right; font-size:25px" (click)="onLoadEditPost()"></ion-icon>
+      <h2>Tanoto Foundation</h2>
+          <p>April 29, 2018</p>
+        </ion-item>
+      
+        <!-- <img src="../assets/imgs/juara.jpg"> -->
+      
+        <ion-card-content>
+          <p><b>Beasiswa Tanoto</b><br>
+          Merupakan beasiswa yang didirikan oleh tanoto foundation, pendaftaran dibuka pada tanggal 29 april 2018.
+          </p>
+        </ion-card-content>
+
   </ion-card>
 </ion-content>
