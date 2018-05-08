@@ -1,23 +1,23 @@
 <?php
     include '../index.php';
     
-    $api = file_get_contents("php://input");
+    $api = file_get_contents('php://input');
     $nim_mhs = "";
     $nama_mhs = "";
     $pass_mhs = "";
-
+    
     if(isset($api)){
         $json = json_decode($api);
-        $nim_mhs = $json->nim_mhs;
-        $nama_mhs = $json->nama_mhs;
-        $pass_mhs = $json->pass_mhs;
+        $nim_mhs = $request->nim_mhs;
+        $nama_mhs = $request->nama_mhs;
+        $pass_mhs = $request->pass_mhs;
         
-        if($json){
-            $query_register = mysqli_query($plug,"INSERT INTO mahasiswa (nim_mhs, nama_mhs, pass_mhs) VALUES ('$nim_mhs', '$nama_mhs', '$pass_mhs')");
+        if($request){
+            $query_edit = mysqli_query($mysqli,"UPDATE mahasiswa SET nama_mhs='$nama_mhs', pass_mhs='$pass_mhs' WHERE nim_mhs = '$nim_mhs'");
             
-            if($query_register){
+            if($query_edit){
                 $dialog = array(
-                    'message' => "User created!",
+                    'message' => "User edited!",
                     'status' => "200"
                 );
             }

@@ -1,23 +1,25 @@
 <?php
     include '../index.php';
     
-    $api = file_get_contents("php://input");
-    $nim_mhs = "";
-    $nama_mhs = "";
-    $pass_mhs = "";
-
+    $api = file_get_contents('php://input');
+    $username = "";
+    $prov_name = "";
+    $password = "";
+    $oldpass = "";
+    
     if(isset($api)){
         $json = json_decode($api);
-        $nim_mhs = $json->nim_mhs;
-        $nama_mhs = $json->nama_mhs;
-        $pass_mhs = $json->pass_mhs;
+        $username = $request->username;
+        $password = $request->password;
+        $provname = $request->provname;
+        $oldpass = $request->oldpass;
         
-        if($json){
-            $query_register = mysqli_query($plug,"INSERT INTO mahasiswa (nim_mhs, nama_mhs, pass_mhs) VALUES ('$nim_mhs', '$nama_mhs', '$pass_mhs')");
+        if($request){
+            $query_edit = mysqli_query($mysqli,"UPDATE provider SET username_penyalur='$username', nama_penyalur='$provname', pass_penyalur='$password' WHERE pass_penyalur = '$oldpass'");
             
-            if($query_register){
+            if($query_edit){
                 $dialog = array(
-                    'message' => "User created!",
+                    'message' => "Provider edited!",
                     'status' => "200"
                 );
             }

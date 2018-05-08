@@ -15,9 +15,9 @@
         $id = $json->id_post;
         
         if($json){
-            $query = mysqli_query($plug, "INSERT INTO blog (judul_post, waktu_post, id_post) VALUES ('$title','$time',NOW(),'$id')");
+            $query_post = mysqli_query($plug, "INSERT INTO post (judul_post, waktu_posts, isi_post) VALUES ('$title',NOW(),'$content')");
             
-            if($query){
+            if($query_post){
                 $dialog = array(
                     'message' => "Posting succeed!",
                     'status' => "200"

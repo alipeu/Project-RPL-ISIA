@@ -1,23 +1,23 @@
 <?php
     include '../index.php';
     
-    $api = file_get_contents("php://input");
-    $nim_mhs = "";
-    $nama_mhs = "";
-    $pass_mhs = "";
-
+    $api = file_get_contents('php://input');
+    $username = "";
+    $prov_name = "";
+    $password = "";
+    
     if(isset($api)){
         $json = json_decode($api);
-        $nim_mhs = $json->nim_mhs;
-        $nama_mhs = $json->nama_mhs;
-        $pass_mhs = $json->pass_mhs;
+        $username = $request->username;
+        $password = $request->password;
+        $provname = $request->provname;
         
-        if($json){
-            $query_register = mysqli_query($plug,"INSERT INTO mahasiswa (nim_mhs, nama_mhs, pass_mhs) VALUES ('$nim_mhs', '$nama_mhs', '$pass_mhs')");
+        if($request){
+            $query_register = mysqli_query($mysqli,"INSERT INTO provider (username_penyalur, nama_penyalur, pass_penyalur) VALUES ($username, $provname, $password)");
             
             if($query_register){
                 $dialog = array(
-                    'message' => "User created!",
+                    'message' => "Provider created!",
                     'status' => "200"
                 );
             }
