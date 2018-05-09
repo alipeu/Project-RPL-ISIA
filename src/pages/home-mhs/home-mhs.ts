@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 import { DetailPage } from '../detail/detail';
+import { ListPage } from '../list/list';
 
 @IonicPage()
 @Component({
@@ -42,6 +43,10 @@ export class HomeMhsPage {
   }
   onLoadDetail() {
     this.navCtrl.push(DetailPage);
+  }
+
+  onLoadList(){
+    this.navCtrl.push(ListPage);
   }
 
   getItems(ev: any) {
