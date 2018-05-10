@@ -21,4 +21,4 @@ git commit -m "catatan kalian"
 git push origin master
 ```
 
-Pastiin udah pull sebelum kerja, kalo pullnya setelah kerja nanti hasil kerjaannya ketimpa
+Pastiin udah pull sebelum kerja, kalo pullnya setelah kerja nanti conflict terus pusing ga jadi kerja
