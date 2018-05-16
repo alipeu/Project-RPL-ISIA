@@ -2,8 +2,8 @@
   <ion-header>
     <ion-toolbar style="text-align: center; padding-top: 10vw; padding-left: 5vw; padding-right: 5vw ">
           <img height="100vw" width="100vw" src="../assets/imgs/mhs.png"><br>
-          <h1 style="color:black; font-size: 6vw;"><b>Muhammad Alif Nurrofli Lubis</b></h1>
-          <p style="color:black; font-size: 4vw;">alifnurrofli@gmail.com</p>
+          <h1 style="color:black; font-size: 6vw;"><b>{{ nama_mhs }}</b></h1>
+          <!-- <p style="color:black; font-size: 4vw;">alifnurrofli@gmail.com</p> -->
     </ion-toolbar>
   </ion-header>
 
@@ -11,6 +11,9 @@
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
+      </button>
+      <button menuClose ion-item (click)="logout()">
+        Log Out
       </button>
     </ion-list>
   </ion-content>
