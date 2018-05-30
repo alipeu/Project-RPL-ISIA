@@ -12,6 +12,14 @@ import { Data } from '../../provider/data';
 export class ProfilePage {
 
   nama_mhs: any;
+  nim: any;
+  mayor: any;
+  semester: any;
+  ipk: any;
+  ukt: any;
+  alamat: any;
+  email: any;
+  telepon: any;
 
   constructor(
     public navCtrl: NavController, 
@@ -26,10 +34,18 @@ export class ProfilePage {
   }
 
   ionViewWillEnter() {
-    this.dataSt.getDataUser().then((data) => {
+    this.dataSt.getData().then((data) => {
+      console.log(data);
       this.nama_mhs = data.nama_mhs;
+      this.nim = data.nim;
+      this.mayor = data.mayor;
+      this.semester = data.semester;
+      this.ipk = data.ipk;
+      this.ukt = data.ukt;
+      this.alamat = data.alamat;
+      this.email = data.userid + '@apps.ipb.ac.id';
+      this.telepon = data.telepon;
     })
-    console.log(this.nama_mhs)
   }
 
   onLoadHomeMhs(){

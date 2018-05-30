@@ -8,7 +8,9 @@ export class Data {
   public BASE_URL = 'http://localhost/rest_api/';
   public HAS_LOGGED_IN = 'status_login';
   
-  constructor(public http: Http , public storage: Storage) {
+  constructor(
+    public http: Http, 
+    public storage: Storage) {
     
   }
 
@@ -25,22 +27,17 @@ export class Data {
   };
 
   isLogin(){
-    return this.storage.get(this.HAS_LOGGED_IN).then((value)=>{
-      return value;
-    });
-  }
-
-  getDataUser() {
-    return this.storage.get('user_data').then((value) => {
+    return this.storage.get(this.HAS_LOGGED_IN).then((value) => {
       return value;
     });
   }
 
   getRole(){
-    return this.storage.get('role').then((value)=>{
+    return this.storage.get('role').then((value) => {
       return value;
     });
   }
+
   getData() {
     return this.storage.get('user_data').then((value) => {
       return value;
