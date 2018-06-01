@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController, App } from 'ionic-angular';
 import { HomeMhsPage } from '../home-mhs/home-mhs';
 import { Http } from '@angular/http';
-import { MyApp } from '../../app/app.component'
+import { MyApp } from '../../app/app.component';
 import { Data } from '../../provider/data';
 
 @IonicPage()
@@ -51,7 +51,7 @@ export class LoginMhsPage {
       else {
         // If account not found
         let toast = this.toastCtrl.create({
-          message: 'User ID atau password Anda salah.',
+          message: 'Harap cek kembali user ID atau password Anda.',
           duration: 3000,
           position: 'top'
         });
