@@ -45,7 +45,7 @@ export class LoginSchPage {
         console.log(response.data);
         this.dataStorage.login(response.data, "user");
         this.loading();
-        this.app.getRootNav().setRoot(MyApp);
+        this.app.getRootNav().setRoot(HomeSchPage);
       } 
       else {
         // If account not found

@@ -46,7 +46,7 @@ export class LoginMhsPage {
         console.log(response.data);
         this.dataStorage.login(response.data, "user");
         this.loading();
-        this.app.getRootNav().setRoot(MyApp);
+        this.app.getRootNav().setRoot(HomeMhsPage);
       } 
       else {
         // If account not found
