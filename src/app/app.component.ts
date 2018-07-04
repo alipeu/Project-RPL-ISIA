@@ -20,6 +20,7 @@ export class MyApp {
   showSplash = true;
   rootPage: any;
   role: any;
+  data: any;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -58,6 +59,17 @@ export class MyApp {
     this.dataStorage.isLogin().then((value) => {
       if(value && this.role == "mhs") {
         this.rootPage = HomeMhsPage;
+        this.dataStorage.getData().then((value) => {
+          console.log(value);
+          this.data = {
+            nama: value.nama_mhs, 
+            nim: value.nim, 
+            email: value.userid + '@apps.ipb.ac.id'
+          };
+          // this.nama_mhs = data.nama_mhs;
+          // this.nim = data.nim;
+          // this.email = data.userid + '@apps.ipb.ac.id';
+        })
       }
       else if(value && this.role == "prv") {
         this.rootPage = HomeSchPage;
