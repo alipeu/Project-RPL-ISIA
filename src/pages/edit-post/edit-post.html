@@ -10,17 +10,17 @@
   <ion-list>
 
     <ion-item>
-      <ion-label floating>Title</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label floating value="">Judul</ion-label>
+      <ion-input type="text" value="{{ judul }}" [(ngModel)]="judul"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Description</ion-label>
-      <ion-textarea type="text" rows=10></ion-textarea>
+      <ion-label floating>Deskripsi</ion-label>
+      <ion-textarea type="text" rows=10 value="{{ deskripsi }}" [(ngModel)]="deskripsi"></ion-textarea>
     </ion-item>
 
   </ion-list>
 
-  <button ion-button block>Submit</button>
+  <button ion-button block (click)="edit()">Edit</button>
 
 </ion-content>

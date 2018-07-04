@@ -13,7 +13,6 @@ import { Data } from '../../provider/data';
 })
 export class HomeSchPage {
 
-  userid: any;
   posts: Array<{}>;
   response: any;
 
@@ -49,7 +48,7 @@ export class HomeSchPage {
           } else {
             let conf = this.alertCtrl.create({
               title: 'Tidak ada post',
-              message: 'Belum ada post saat ini. Silakan coba lagi nanti',
+              message: 'Anda belum pernah membuat post, tekan tombol di sebelah kanan bawah untuk membuat post.',
               buttons: [
         {
             text: 'OK',
@@ -68,19 +67,53 @@ export class HomeSchPage {
     console.log('ionViewDidLoad HomeSchPage');
   }
 
-  onLoadPost(){
+  onLoadPost() {
     this.navCtrl.push(PostPage);
   }
   
-  onLoadEditPost(){
-    this.navCtrl.push(EditPostPage);
+  pushEditPost(id) {
+    this.navCtrl.push(EditPostPage, 
+      {
+        data: id,
+      }
+    );
   }
   
-  showAlert() {
+  delete(id) {
+    // let index = this.posts.indexOf(post);
+    
+    // console.log(index);
+    console.log(JSON.stringify({id_post: id}));
+    
+    let link = 'http://localhost/rest_api/deletepost.php';
     let alert = this.alertCtrl.create({
       title: 'Hapus',
       subTitle: 'Apakah Anda yakin menghapus post ini?',
-      buttons: ['YA', 'TIDAK']
+      buttons: [
+        {
+          text: 'Ya',
+          handler: () => {
+            this.http.post(link, JSON.stringify({id_post: id})).subscribe(data => {
+              let response = data.json();
+              console.log(response);
+              let toast = this.toastCtrl.create({
+                message: 'Post berhasil dihapus',
+                duration: 3000,
+                position: 'top'
+            });
+            toast.present();
+            console.log('Ya clicked');
+            this.app.getRootNav().setRoot(HomeSchPage, {opentab: 2});
+            });
+          }
+        },
+        {
+          text: 'Tidak',
+          handler: () => {
+            console.log('Tidak clicked');
+          }
+        }
+      ]
     });
     alert.present();
   }

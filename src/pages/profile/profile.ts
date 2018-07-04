@@ -25,7 +25,7 @@ export class ProfilePage {
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public alertCtrl: AlertController,
-    public dataSt: Data
+    public dataStorage: Data
   ) {
   }
 
@@ -34,7 +34,7 @@ export class ProfilePage {
   }
 
   ionViewWillEnter() {
-    this.dataSt.getData().then((data) => {
+    this.dataStorage.getData().then((data) => {
       console.log(data);
       this.nama_mhs = data.nama_mhs;
       this.nim = data.nim;
@@ -49,7 +49,7 @@ export class ProfilePage {
   }
 
   onLoadHomeMhs(){
-  this.navCtrl.push(HomeMhsPage);
+    this.navCtrl.push(HomeMhsPage);
   }
 
   showAlert() {

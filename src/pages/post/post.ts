@@ -52,56 +52,56 @@ export class PostPage {
     	title: 'Konfirmasi post',
 		message: 'Apakah Anda yakin ingin membuat post ini?',
 		buttons: [
-		{
-		  text: 'Tidak',
-		  handler: () => {
-		    console.log('Tidak clicked');
-		  }
-		},
-		{
-		  text: 'Ya',
-		  handler: () => {
-		  	var thetime = new Date(Date.now());
-        var utctime = thetime.getTime();
-        let postData = JSON.stringify({judul: this.data.judul, deskripsi: this.data.deskripsi, waktu: utctime, userid_prv: this.data.userid_prv});
-        console.log(postData)
-          if(this.data.judul.length <= 24){
-            this.http.post(link, postData).subscribe(data => {
-            console.log(data)
-            let response = data.json();
-            //let response = data["_body"];
-            console.log(response)
-            if(response.status == "200"){
-              let toast = this.toastCtrl.create({
-                message: 'Post berhasil dibuat!',
-                duration: 3000,
-                position: 'top'
-              });
-              toast.present()
-              this.app.getRootNav().setRoot(HomeSchPage, {opentab: 2});
-            } else {
-              let toast = this.toastCtrl.create({
-                message: 'Gagal membuat post. Silakan coba lagi.',
+      {
+        text: 'Ya',
+        handler: () => {
+          var thetime = new Date(Date.now());
+          var utctime = thetime.getTime();
+          let postData = JSON.stringify({judul: this.data.judul, deskripsi: this.data.deskripsi, waktu: utctime, userid_prv: this.data.userid_prv});
+          console.log(postData)
+            if(this.data.judul.length <= 24){
+              this.http.post(link, postData).subscribe(data => {
+              console.log(data)
+              let response = data.json();
+              //let response = data["_body"];
+              console.log(response)
+              if(response.status == "200"){
+                let toast = this.toastCtrl.create({
+                  message: 'Post berhasil dibuat!',
+                  duration: 3000,
+                  position: 'top'
+                });
+                toast.present()
+                this.app.getRootNav().setRoot(HomeSchPage, {opentab: 2});
+              } else {
+                let toast = this.toastCtrl.create({
+                  message: 'Gagal membuat post. Silakan coba lagi.',
+                  duration: 3000,
+                  position: 'top'
+                });
+                toast.present();
+              }
+  
+            }, error => {
+            console.log(error);
+          });
+        } else { //kalau judul lebih dari 24 karakter
+          let toast = this.toastCtrl.create({
+                message: 'Field judul tidak boleh lebih dari 24 karakter',
                 duration: 3000,
                 position: 'top'
               });
               toast.present();
-            }
-
-          }, error => {
-          console.log(error);
-        });
-      } else { //kalau judul lebih dari 24 karakter
-        let toast = this.toastCtrl.create({
-              message: 'Field judul tidak boleh lebih dari 24 karakter',
-              duration: 3000,
-              position: 'top'
-            });
-            toast.present();
-      }
-		    console.log('Ya clicked');
-      }
+        }
+          console.log('Ya clicked');
+        }
+      },
+      {
+		  text: 'Tidak',
+		  handler: () => {
+		    console.log('Tidak clicked');
 		  }
+		}
 		]
     });
    konfirmasi.present(); 

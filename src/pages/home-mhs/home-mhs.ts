@@ -47,7 +47,7 @@ export class HomeMhsPage {
         } else {
           let conf = this.alertCtrl.create({
           	title: 'Tidak ada post',
-            message: 'Belum ada post saat ini. Silakan coba lagi nanti',
+            message: 'Belum ada post saat ini.',
             buttons: [
 			{
 		  		text: 'OK',

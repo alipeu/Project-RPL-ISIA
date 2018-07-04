@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the EditPostPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { App, IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
+import { HomeSchPage } from '../home-sch/home-sch';
+import { Http } from '@angular/http';
+import { Data } from '../../provider/data';
 
 @IonicPage()
 @Component({
@@ -15,7 +11,98 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EditPostPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  posts: Array<{}>;
+  response: any;
+  id: any;
+  judul: any;
+  deskripsi: any;
+
+  constructor(
+    public app: App,
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public http: Http,
+    public toastCtrl: ToastController, 
+    public alertCtrl: AlertController, 
+    public dataStorage: Data
+  ) {
+    this.id = navParams.get('data');
+    let linkgetposts = 'http://localhost/rest_api/poste.php';
+  	this.posts = [];
+  	this.response = {};
+    this.dataStorage.getData().then((value) => {
+      this.http.post(linkgetposts, JSON.stringify({userid_prv: value.userid_prv})).subscribe(data => {
+        this.response = data.json();
+        if(this.response.status == "200"){
+          var thedatetime = new Date(+this.response.data[this.id - 1].waktu);
+          var options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }
+          this.judul = this.response.data[this.id - 1].judul;
+          this.deskripsi = this.response.data[this.id - 1].deskripsi;
+        }
+      });
+    });
+  }
+
+  edit() {
+    let link = 'http://localhost/rest_api/editpost.php';
+
+    let konfirmasi = this.alertCtrl.create({
+    title: 'Konfirmasi edit',
+		message: 'Apakah Anda yakin ingin mengedit post ini?',
+		buttons: [
+      {
+        text: 'Ya',
+        handler: () => {
+          var thetime = new Date(Date.now());
+          var utctime = thetime.getTime();
+          let postData = JSON.stringify({id_post: this.id, judul: this.judul, deskripsi: this.deskripsi, waktu: utctime});
+          console.log(postData)
+            if(this.judul.length <= 24){
+              this.http.post(link, postData).subscribe(data => {
+              console.log(data)
+              let response = data.json();
+              //let response = data["_body"];
+              console.log(response)
+              if(response.status == "200"){
+                let toast = this.toastCtrl.create({
+                  message: 'Post berhasil diedit!',
+                  duration: 3000,
+                  position: 'top'
+                });
+                toast.present()
+                this.app.getRootNav().setRoot(HomeSchPage, {opentab: 2});
+              } else {
+                let toast = this.toastCtrl.create({
+                  message: 'Gagal membuat post. Silakan coba lagi.',
+                  duration: 3000,
+                  position: 'top'
+                });
+                toast.present();
+              }
+  
+            }, error => {
+            console.log(error);
+          });
+        } else { //kalau judul lebih dari 24 karakter
+          let toast = this.toastCtrl.create({
+                message: 'Field judul tidak boleh lebih dari 24 karakter',
+                duration: 3000,
+                position: 'top'
+              });
+              toast.present();
+        }
+          console.log('Ya clicked');
+        }
+      },
+      {
+		  text: 'Tidak',
+		  handler: () => {
+		    console.log('Tidak clicked');
+		  }
+		}
+		]
+    });
+   konfirmasi.present(); 
   }
 
   ionViewDidLoad() {
