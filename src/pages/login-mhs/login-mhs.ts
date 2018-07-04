@@ -44,7 +44,7 @@ export class LoginMhsPage {
       // this.data.response = data["_body"]; //https://stackoverflow.com/questions/39574305/property-body-does-not-exist-on-type-response
       if(response.status == "200") {
         console.log(response.data);
-        this.dataStorage.login(response.data, "user");
+        this.dataStorage.login(response.data, "mhs");
         this.loading();
         this.app.getRootNav().setRoot(HomeMhsPage);
       } 

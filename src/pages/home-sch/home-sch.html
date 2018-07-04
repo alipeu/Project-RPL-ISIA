@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar hideBackButton>
-      <ion-icon name="md-exit" style="float: right; font-size:25px; margin-right:10px"(click)="onLoadHome()"></ion-icon>
+      <ion-icon name="md-exit" style="float: right; font-size:25px; margin-right:10px"(click)="logout()"></ion-icon>
     <ion-title>Your Posts</ion-title>
     <ion-buttons right>
       <button ion-button>
@@ -14,24 +14,25 @@
   <ion-fab right bottom>
     <button ion-fab color="primary" (click)="onLoadPost()"><ion-icon name="md-add"></ion-icon></button>
   </ion-fab>
-  <ion-card>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="../assets/imgs/profile.png">
-      </ion-avatar>
-      <ion-icon name="md-trash" style="float: right; font-size:25px; margin-left:6px"(click)="showAlert()"></ion-icon>
-      <ion-icon name="md-create" style="float: right; font-size:25px" (click)="onLoadEditPost()"></ion-icon>
-      <h2>Tanoto Foundation</h2>
-          <p>April 29, 2018</p>
-        </ion-item>
-      
-        <!-- <img src="../assets/imgs/juara.jpg"> -->
-      
+  <ng-container *ngFor="let post of posts">
+    <ion-card *ngIf="post">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../assets/imgs/profile.png">
+        </ion-avatar>
+        <ion-icon name="md-trash" style="float: right; font-size:25px; margin-left:6px"(click)="showAlert()"></ion-icon>
+        <ion-icon name="md-create" style="float: right; font-size:25px" (click)="onLoadEditPost()"></ion-icon>
+        <h2>{{ post.nama_prv }}</h2>
+        <p>{{ post.waktu }}</p>
+      </ion-item>
+        
+          <!-- <img src="../assets/imgs/juara.jpg"> -->
+        
         <ion-card-content>
-          <p><b>Beasiswa Tanoto</b><br>
-          Merupakan beasiswa yang didirikan oleh tanoto foundation, pendaftaran dibuka pada tanggal 29 april 2018.
+          <p><b>{{ post.judul }}</b><br>
+          {{ post.deskripsi }}
           </p>
         </ion-card-content>
-
-  </ion-card>
+    </ion-card>
+  </ng-container>
 </ion-content>

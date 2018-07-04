@@ -8,6 +8,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
 import { HelpPage } from '../pages/help/help';
 import { HomeMhsPage } from '../pages/home-mhs/home-mhs';
+import { HomeSchPage } from '../pages/home-sch/home-sch';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,8 +17,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any;
-  nama_mhs: any;
-
+  role: any;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -26,7 +26,7 @@ export class MyApp {
     public statusBar: StatusBar,
     public menu: MenuController, 
     public splashScreen: SplashScreen,
-    public data: Data
+    public dataStorage: Data
   ) {
     this.initializeApp();
 
@@ -47,9 +47,16 @@ export class MyApp {
       this.splashScreen.hide();
     });
 
-    this.data.isLogin().then((value) => {
-      if(value) {
+    this.dataStorage.getRole().then((value) => {
+      this.role = value;
+    });
+
+    this.dataStorage.isLogin().then((value) => {
+      if(value && this.role == "mhs") {
         this.rootPage = HomeMhsPage;
+      }
+      else if(value && this.role == "prv") {
+        this.rootPage = HomeSchPage;
       }
       else {
         this.rootPage = HomePage;
@@ -65,7 +72,7 @@ export class MyApp {
 
   logout() {
     this.menu.close();
-    this.data.logout();
+    this.dataStorage.logout();
     this.app.getRootNav().setRoot(MyApp);
   }
 }

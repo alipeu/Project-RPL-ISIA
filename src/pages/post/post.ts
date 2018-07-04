@@ -79,12 +79,8 @@ export class PostPage {
                 position: 'top'
               });
               toast.present()
-              //this.navCtrl.push(PenemuanPage); //yang ini push ke page baru dari child
-              //this.app.getRootNav().push(PenemuanPage) //yang ini push ke page baru dari entire app
               this.app.getRootNav().setRoot(HomeSchPage, {opentab: 2});
-              //this.navCtrl.setRoot(TabsPage);
             } else {
-              // Kalau gagal post
               let toast = this.toastCtrl.create({
                 message: 'Gagal membuat post. Silakan coba lagi.',
                 duration: 3000,

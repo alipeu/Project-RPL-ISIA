@@ -15,7 +15,6 @@ import { Menu } from 'ionic-angular/components/app/menu-interface';
 export class HomeMhsPage {
   
   posts: Array<{}>;
-  items: string[];
   response: any;
 
   constructor(
@@ -25,7 +24,7 @@ export class HomeMhsPage {
     public http: Http,
     public toastCtrl: ToastController, 
     public alertCtrl: AlertController, 
-    public DataStorage: Data
+    public dataStorage: Data
   ) {
     let linkgetposts = 'http://localhost/rest_api/post.php';
   	this.posts = [];
