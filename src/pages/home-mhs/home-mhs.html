@@ -17,39 +17,39 @@
 </ion-header>
 
 <ion-content padding class="bg-style">
-  <ion-searchbar 
+  <!-- <ion-searchbar 
     [(ngModel)]="myInput"
     [showCancelButton]="shouldShowCancel"
     (ionInput)="getItems($event)"
     (ionCancel)="onCancel($event)">
-  </ion-searchbar>
-    
-    <ion-card>
+  </ion-searchbar> -->
+    <ng-container *ngFor="let post of posts">
+      <ion-card *ngIf="post">
         <ion-item>
           <ion-avatar item-start>
             <img src="../assets/imgs/profile.png">
           </ion-avatar>
-          <h2>Tanoto Foundation</h2>
-          <p>April 29, 2018</p>
+          <h2>{{ post.nama_prv }}</h2>
+          <p>{{ post.waktu }}</p>
         </ion-item>
       
         <!-- <img src="../assets/imgs/juara.jpg"> -->
       
         <ion-card-content>
-          <p><b>Beasiswa Tanoto</b><br>
-          Merupakan beasiswa yang didirikan oleh tanoto foundation, pendaftaran dibuka pada tanggal 29 april 2018.
+          <p><b>{{ post.judul }}</b><br>
+          {{ post.deskripsi }}
           </p>
         </ion-card-content>
       
         <ion-row>
           <ion-col center text-center>
-              <button ion-button icon-left clear small (click)="onLoadDetail()">
-                  <div>Detail</div>
-                </button>
+            <button ion-button icon-left clear small (click)="onLoadDetail()">
+              <div>Detail</div>
+            </button>
           </ion-col>
         </ion-row>
-      
       </ion-card>
+    </ng-container>
       <!-- <ion-card>
   
           <ion-item>
