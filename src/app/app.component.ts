@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { HelpPage } from '../pages/help/help';
 import { HomeMhsPage } from '../pages/home-mhs/home-mhs';
 import { HomeSchPage } from '../pages/home-sch/home-sch';
+import { timer } from 'rxjs/observable/timer';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,6 +17,7 @@ import { HomeSchPage } from '../pages/home-sch/home-sch';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+  showSplash = true;
   rootPage: any;
   role: any;
   pages: Array<{title: string, component: any}>;
@@ -45,6 +47,8 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      timer(3000).subscribe(() => this.showSplash = false)
     });
 
     this.dataStorage.getRole().then((value) => {

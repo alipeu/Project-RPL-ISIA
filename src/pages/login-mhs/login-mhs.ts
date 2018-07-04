@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController, App } from 'ionic-angular';
 import { HomeMhsPage } from '../home-mhs/home-mhs';
 import { Http } from '@angular/http';
-import { MyApp } from '../../app/app.component';
 import { Data } from '../../provider/data';
 
 @IonicPage()

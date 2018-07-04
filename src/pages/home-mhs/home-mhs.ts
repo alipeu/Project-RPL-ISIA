@@ -5,7 +5,6 @@ import { DetailPage } from '../detail/detail';
 import { ListPage } from '../list/list';
 import { Http } from '@angular/http';
 import { Data } from '../../provider/data';
-import { Menu } from 'ionic-angular/components/app/menu-interface';
 
 @IonicPage()
 @Component({

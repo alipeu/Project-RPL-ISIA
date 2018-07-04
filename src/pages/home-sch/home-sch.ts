@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
-import { App, IonicPage, NavController, NavParams, MenuController, ToastController, AlertController } from 'ionic-angular';
-import { ProfilePage } from '../profile/profile';
-import { DetailPage } from '../detail/detail';
-import { ListPage } from '../list/list';
+import { App, IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 import { PostPage } from '../post/post';
 import { EditPostPage } from '../edit-post/edit-post';
 import { HomePage } from '../home/home';
 import { Http } from '@angular/http';
 import { Data } from '../../provider/data';
-import { Menu } from 'ionic-angular/components/app/menu-interface';
 
 @IonicPage()
 @Component({
