@@ -52,7 +52,6 @@ export class DetailPage {
         }
       });
     });
-    this.komentar = [];
   }
 
   ionViewDidLoad() {
