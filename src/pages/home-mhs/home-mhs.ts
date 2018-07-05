@@ -73,8 +73,12 @@ export class HomeMhsPage {
   onCancel() {
     this.navCtrl.push(ProfilePage);
   }
-  onLoadDetail() {
-    this.navCtrl.push(DetailPage);
+  onLoadDetail(id) {
+    this.navCtrl.push(DetailPage, 
+      {
+        data: id,
+      }
+    );
   }
 
   onLoadList(){

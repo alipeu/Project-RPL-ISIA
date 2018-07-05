@@ -34,8 +34,6 @@ export class EditPostPage {
       this.http.post(linkgetposts, JSON.stringify({userid_prv: value.userid_prv})).subscribe(data => {
         this.response = data.json();
         if(this.response.status == "200"){
-          var thedatetime = new Date(+this.response.data[this.id - 1].waktu);
-          var options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }
           this.judul = this.response.data[this.id - 1].judul;
           this.deskripsi = this.response.data[this.id - 1].deskripsi;
         }

@@ -66,9 +66,6 @@ export class MyApp {
             nim: value.nim, 
             email: value.userid + '@apps.ipb.ac.id'
           };
-          // this.nama_mhs = data.nama_mhs;
-          // this.nim = data.nim;
-          // this.email = data.userid + '@apps.ipb.ac.id';
         })
       }
       else if(value && this.role == "prv") {
