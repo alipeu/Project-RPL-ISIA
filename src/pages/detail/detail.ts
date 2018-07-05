@@ -18,6 +18,7 @@ export class DetailPage {
   waktu: any;
   judul: any;
   deskripsi: any;
+  komentar: Array<{}>;
 
   constructor(
     public app: App,
@@ -51,7 +52,7 @@ export class DetailPage {
         }
       });
     });
-    this.comment = [];
+    this.komentar = [];
   }
 
   ionViewDidLoad() {
