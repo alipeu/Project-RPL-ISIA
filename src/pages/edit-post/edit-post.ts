@@ -33,9 +33,14 @@ export class EditPostPage {
     this.dataStorage.getData().then((value) => {
       this.http.post(linkgetposts, JSON.stringify({userid_prv: value.userid_prv})).subscribe(data => {
         this.response = data.json();
-        if(this.response.status == "200"){
-          this.judul = this.response.data[this.id - 1].judul;
-          this.deskripsi = this.response.data[this.id - 1].deskripsi;
+        console.log(this.response.data);
+        if(this.response.status == "200") {
+          for(var i = 0; i < this.response.data.length; i++) {
+            if(this.response.data[i].id_post == this.id) {
+              this.judul = this.response.data[i].judul;
+              this.deskripsi = this.response.data[i].deskripsi;
+            }
+          }
         }
       });
     });

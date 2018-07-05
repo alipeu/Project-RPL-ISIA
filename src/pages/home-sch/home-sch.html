@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar hideBackButton>
-      <ion-icon name="md-exit" style="float: right; font-size:25px; margin-right:10px"(click)="logout()"></ion-icon>
-    <ion-title>Your Posts</ion-title>
+    <ion-icon name="md-exit" style="float: right; font-size:25px; margin-right:5px"(click)="logout()"></ion-icon>
+    <ion-title style="padding-left:10px">Your Posts</ion-title>
     <ion-buttons right>
       <button ion-button>
         <ion-icon class="header-icon"></ion-icon>
@@ -20,8 +20,8 @@
         <ion-avatar item-start>
           <img src="../assets/imgs/sch.png">
         </ion-avatar>
-        <ion-icon name="md-trash" style="float: right; font-size:25px; margin-left:10px" (click)="delete(post.id_post)"></ion-icon>
-        <ion-icon name="md-create" style="float: right; font-size:25px" (click)="pushEditPost(post.id_post)"></ion-icon>
+        <ion-icon name="md-trash" style="float: right; font-size:25px; margin-left:10px; color:grey" (click)="delete(post.id_post)"></ion-icon>
+        <ion-icon name="md-create" style="float: right; font-size:25px; color:grey" (click)="pushEditPost(post.id_post)"></ion-icon>
         <h2>{{ post.nama_prv }}</h2>
         <p>{{ post.waktu }}</p>
       </ion-item>
