@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar hideBackButton>
     <ion-icon name="md-exit" style="float: right; font-size:25px; margin-right:5px"(click)="logout()"></ion-icon>
-    <ion-title style="padding-left:10px">Your Posts</ion-title>
+    <ion-title style="padding-left:10px">Post Anda</ion-title>
     <ion-buttons right>
       <button ion-button>
         <ion-icon class="header-icon"></ion-icon>
@@ -29,10 +29,16 @@
           <!-- <img src="../assets/imgs/juara.jpg"> -->
         
         <ion-card-content>
-          <p><b>{{ post.judul }}</b><br>
-          {{ post.deskripsi }}
-          </p>
+          <p><b>{{ post.judul }}</b></p>
+          <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ post.deskripsi }}</p>
         </ion-card-content>
+        <ion-row>
+          <ion-col center text-center>
+            <button ion-button icon-left clear small (click)="pushDetail(post.id_post)">
+              <div>Detail</div>
+            </button>
+          </ion-col>
+        </ion-row>
     </ion-card>
   </ng-container>
 </ion-content>

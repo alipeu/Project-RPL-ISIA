@@ -9,7 +9,9 @@
       <ion-title>HOME</ion-title>
       <ion-buttons right>
         <button ion-button (click)="onLoadList()">
-          <ion-icon name="md-notifications" class="header-icon"></ion-icon>
+          <ion-icon name="md-notifications" class="header-icon">
+            <ion-badge id="notifications-badge" color="danger" *ngIf="counter">{{ counter }}</ion-badge>
+          </ion-icon>
         </button>
       </ion-buttons>
     </ion-navbar>
@@ -36,14 +38,13 @@
         <!-- <img src="../assets/imgs/juara.jpg"> -->
       
         <ion-card-content>
-          <p><b>{{ post.judul }}</b><br>
-          {{ post.deskripsi }}
-          </p>
+          <p><b>{{ post.judul }}</b></p>
+          <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ post.deskripsi }}</p>
         </ion-card-content>
       
         <ion-row>
           <ion-col center text-center>
-            <button ion-button icon-left clear small (click)="onLoadDetail(post.id_post)">
+            <button ion-button icon-left clear small (click)="pushDetail(post.id_post)">
               <div>Detail</div>
             </button>
           </ion-col>

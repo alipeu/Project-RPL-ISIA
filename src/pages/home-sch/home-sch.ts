@@ -3,6 +3,7 @@ import { App, IonicPage, NavController, NavParams, ToastController, AlertControl
 import { PostPage } from '../post/post';
 import { EditPostPage } from '../edit-post/edit-post';
 import { HomePage } from '../home/home';
+import { DetailPage } from '../detail/detail';
 import { Http } from '@angular/http';
 import { Data } from '../../provider/data';
 
@@ -121,5 +122,13 @@ export class HomeSchPage {
   logout() {
     this.dataStorage.logout();
     this.app.getRootNav().setRoot(HomePage);
+  }
+
+  pushDetail(id) {
+    this.navCtrl.push(DetailPage, 
+      {
+        data: id,
+      }
+    );
   }
 }

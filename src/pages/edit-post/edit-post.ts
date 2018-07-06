@@ -60,7 +60,7 @@ export class EditPostPage {
           var utctime = thetime.getTime();
           let postData = JSON.stringify({id_post: this.id, judul: this.judul, deskripsi: this.deskripsi, waktu: utctime});
           console.log(postData)
-            if(this.judul.length <= 24){
+            if(this.judul.length <= 30){
               this.http.post(link, postData).subscribe(data => {
               console.log(data)
               let response = data.json();
@@ -86,9 +86,9 @@ export class EditPostPage {
             }, error => {
             console.log(error);
           });
-        } else { //kalau judul lebih dari 24 karakter
+        } else {
           let toast = this.toastCtrl.create({
-                message: 'Field judul tidak boleh lebih dari 24 karakter',
+                message: 'Field judul tidak boleh lebih dari 30 karakter',
                 duration: 3000,
                 position: 'top'
               });

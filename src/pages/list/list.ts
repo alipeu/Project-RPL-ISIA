@@ -1,37 +1,50 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController, ToastController, AlertController } from 'ionic-angular';
+import { DetailPage } from '../detail/detail';
+import { Http } from '@angular/http';
+import { Data } from '../../provider/data';
 
 @Component({
   selector: 'page-list',
   templateUrl: 'list.html'
 })
 export class ListPage {
-  selectedItem: any;
-  icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+  
+  posts: Array<{}>;
+  response: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+  constructor(
+    public menuCtrl: MenuController,
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public http: Http,
+    public toastCtrl: ToastController, 
+    public alertCtrl: AlertController, 
+    public dataStorage: Data
+  ) {
+    let linkgetposts = 'http://localhost/rest_api/post.php';
+  	this.posts = [];
+    this.response = {};
 
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+  	this.http.get(linkgetposts).subscribe(data => {
+  		this.response = data.json();
+  		if(this.response.status == "200"){
+          console.log(this.response.data);
+          for (var i = 0; i < this.response.data.length; i++) {
+          	  let posts_elem =
+              {nama: this.response.data[i].nama_prv, id: this.response.data[i].id_post};
+              this.posts.push(posts_elem);
+          }
+        }
+  	});
   }
 
-  itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ListPage, {
-      item: item
-    });
+  pushDetail(id) {
+    this.navCtrl.push(DetailPage, 
+      {
+        data: id,
+      }
+    );
+
   }
 }

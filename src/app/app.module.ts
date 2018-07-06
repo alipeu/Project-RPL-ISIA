@@ -20,6 +20,10 @@ import { EditPostPage } from '../pages/edit-post/edit-post';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Data } from '../provider/data';
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -61,6 +65,10 @@ import { Data } from '../provider/data';
     StatusBar,
     SplashScreen,
     Data,
+    File,
+    Transfer,
+    Camera,
+    FilePath,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

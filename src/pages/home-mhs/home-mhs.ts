@@ -15,6 +15,7 @@ export class HomeMhsPage {
   
   posts: Array<{}>;
   response: any;
+  counter: any;
 
   constructor(
     public menuCtrl: MenuController,
@@ -33,6 +34,7 @@ export class HomeMhsPage {
   		this.response = data.json();
   		if(this.response.status == "200"){
           console.log(this.response.data);
+          this.counter = 0;
           for (var i=0;i<this.response.data.length;i++) {
           	  var thedatetime = new Date(+this.response.data[i].waktu);
           	  var options = { weekday: 'long', year: 'numeric',
@@ -73,7 +75,8 @@ export class HomeMhsPage {
   onCancel() {
     this.navCtrl.push(ProfilePage);
   }
-  onLoadDetail(id) {
+
+  pushDetail(id) {
     this.navCtrl.push(DetailPage, 
       {
         data: id,

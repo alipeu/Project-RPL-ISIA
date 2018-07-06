@@ -39,9 +39,9 @@ export class DetailPage {
         console.log(this.response.data);
         console.log(this.id);
         if(this.response.status == "200"){
-          var thedatetime = new Date(+this.response.data[this.id - 1].waktu);
-          var options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }
           for(var i = 0; i < this.response.data.length; i++) {
+            var thedatetime = new Date(+this.response.data[i].waktu);
+            var options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }
             if(this.response.data[i].id_post == this.id) {
               this.nama = this.response.data[i].nama_prv;
               this.waktu = thedatetime.toLocaleDateString('id-ID', options);
