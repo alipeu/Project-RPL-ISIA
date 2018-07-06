@@ -16,6 +16,7 @@ import { HomeSchPage } from '../pages/home-sch/home-sch';
 import { HelpPage } from '../pages/help/help';
 import { PostPage } from '../pages/post/post';
 import { EditPostPage } from '../pages/edit-post/edit-post';
+import { CommentsPage } from '../pages/comment/comment';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -34,7 +35,8 @@ import { Data } from '../provider/data';
     HomeSchPage,
     HelpPage,
     PostPage,
-    EditPostPage
+    EditPostPage,
+    CommentsPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { Data } from '../provider/data';
     HomeSchPage,
     HelpPage,
     PostPage,
-    EditPostPage
+    EditPostPage,
+    CommentsPage
   ],
   providers: [
     StatusBar,

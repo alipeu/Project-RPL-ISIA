@@ -17,7 +17,7 @@ export class CommentsPage {
 
   constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public dataStorage: DataProvider, public http: Http) {
       this.data.comment = "";
-      this.data.post_id = navParams.get('id');
+      this.data.comment_id = navParams.get('id');
   }
 
   ionViewDidLoad() {
