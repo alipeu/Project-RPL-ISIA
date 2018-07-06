@@ -33,14 +33,14 @@ export class CommentsPage {
   ionViewWillEnter() {
     this.dataStorage.getData().then((data) => {
       // console.log(data);
-      this.data.name = data.name;
-      this.data.user_id = data.user_id;
+      //this.data.name = data.name;
+      this.data.userid = data.userid;
     })
    }
 
    postcomment(){
      let link = 'http://localhost/rest_api/comment.php';
-     var data = JSON.stringify({user_id: this.data.user_id, name: this.data.name, post_id: this.data.post_id, comment: this.data.comment});
+     var data = JSON.stringify({userid: this.data.userid, post_id: this.data.post_id, isi_comment: this.data.isi_comment});
     // console.log(data);
      this.http.post(link, data).subscribe(data => {
        this.data.response = data["_body"]; //https://stackoverflow.com/questions/39574305/property-body-does-not-exist-on-type-response
@@ -60,7 +60,7 @@ export class CommentsPage {
 
    getComment(){
      var link = 'http://localhost/rest_api/get_comment.php';
-     var data = JSON.stringify({post_id: this.data.post_id});
+     var data = JSON.stringify({id_post: this.data.id_post});
      this.http.post(link, data).subscribe(data => {
        let response = data.json();
        //this.data.response = data["_body"]; //https://stackoverflow.com/questions/39574305/property-body-does-not-exist-on-type-response
