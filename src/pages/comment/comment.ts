@@ -15,7 +15,7 @@ export class CommentsPage {
   comments = [];
   name: string;
 
-  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public dataStorage: DataProvider, public http: Http) {
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public dataStorage: Data, public http: Http) {
       this.data.comment = "";
       this.data.comment_id = navParams.get('id');
   }
@@ -26,7 +26,7 @@ export class CommentsPage {
   }
 
   ionViewWillEnter() {
-    this.dataStorage.getDataUser().then((data) => {
+    this.dataStorage.getData().then((data) => {
       // console.log(data);
       this.data.name = data.name;
       this.data.user_id = data.user_id;

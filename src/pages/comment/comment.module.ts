@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { CommentsPage } from './comments';
+import { CommentsPage } from './comment';
 
 @NgModule({
   declarations: [
